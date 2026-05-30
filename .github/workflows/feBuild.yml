@@ -16,8 +16,6 @@ jobs:
 
       - name: Install FE dependencies
         run: npm install
-        working-directory: ChatBotFE
 
       - name: Run FE tests
         run: npm run test
-        working-directory: ChatBotFE
