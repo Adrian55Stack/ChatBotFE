@@ -9,11 +9,9 @@ import { CoreMessageService } from './core-message.service';
 export class BotService {
   coreMessagesService = inject(CoreMessageService);
 
-  private readonly botAvailabilityDelay = 1000;
   private readonly botIsTypingDelay = 2000;
   private readonly replyDelay = 3000;
 
-  private readonly availability: Subject<boolean> = new Subject();
   private readonly isTyping: Subject<boolean> = new Subject();
 
   private botStream: Observable<IMessage>;

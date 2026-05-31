@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -7,6 +7,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CoreMessageService } from '../services/core-message.service';
 import { BehaviorSubject, debounceTime } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { ConversationService } from '../services/conversation.service';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-chat-footer',
@@ -15,6 +17,8 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './chat-footer.component.scss'
 })
 export class ChatFooterComponent implements OnInit {
+  private readonly destroyRef = inject(DestroyRef);
+  conversationService = inject(ConversationService);
   coreMessageService = inject(CoreMessageService);
 
   input: FormControl = new FormControl();
@@ -34,6 +38,9 @@ export class ChatFooterComponent implements OnInit {
   }
 
   sendMessage() {
+    this.conversationService.getAiResponse(this.input.value).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(resp => {
+      console.log(resp);
+    });
     this.coreMessageService.setMessage(this.input.value);
     this.input.reset();
     this.isDisabled$.next(true);
