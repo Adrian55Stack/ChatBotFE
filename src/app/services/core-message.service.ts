@@ -18,9 +18,4 @@ export class CoreMessageService {
       filter((msg: any) => !!msg.trim()),
       distinctUntilChanged());
   }
-
-  endConversation(): void {
-    this.message$.complete();
-  }
-
 }

@@ -38,8 +38,4 @@ export class ChatFooterComponent implements OnInit {
     this.input.reset();
     this.isDisabled$.next(true);
   }
-
-  endConversation() {
-    this.coreMessageService.endConversation();
-  }
 }

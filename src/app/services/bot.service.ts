@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { delay, first, last, map, Observable, Subject } from 'rxjs';
+import { delay, map, Observable, Subject } from 'rxjs';
 import { IMessage } from '../models/message.model';
 import { CoreMessageService } from './core-message.service';
 
@@ -20,7 +20,6 @@ export class BotService {
 
   constructor() {
     this.defineBotStream();
-    this.listenToBotAvailabilityChanges();
     this.listenToBotIsTypingChanges();
   }
 
@@ -52,25 +51,5 @@ export class BotService {
 
   getBotIsTyping() : Observable<boolean> {
     return this.isTyping.asObservable();
-  }
-
-  getBotAvailability(): Observable<boolean> {
-    return this.availability.asObservable();
-  }
-
-  setBotAvailability(value: boolean): void {
-    this.availability.next(value);
-  }
-
-  listenToBotAvailabilityChanges(): void {
-    this.coreMessagesService.getMessage().pipe(
-      first(),
-      delay(this.botAvailabilityDelay),
-    ).subscribe(() => this.setBotAvailability(true));
-
-    this.coreMessagesService.getMessage().pipe(
-      last(),
-      delay(this.botAvailabilityDelay),
-    ).subscribe(() => this.setBotAvailability(false));
   }
 }
