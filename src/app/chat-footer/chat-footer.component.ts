@@ -9,7 +9,7 @@ import { BehaviorSubject, debounceTime } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ConversationService } from '../services/conversation.service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import { IMessage } from '../models/message.model';
+import { IMessage, Message } from '../models/message.model';
 
 @Component({
   selector: 'app-chat-footer',
@@ -39,23 +39,15 @@ export class ChatFooterComponent implements OnInit {
   }
 
   sendMessage() {
-    const userMessage: IMessage = {
-      id: 2,
-      author: 'User',
-      content: this.input.value,
-      time: new Date()
-    };
+    this.coreMessageService.setInProgress(true);
+    const userMessage: IMessage = new Message(this.coreMessageService.getNumberOfMessages() + 1, 'User', this.input.value);
 
     this.coreMessageService.add(userMessage);
 
     this.conversationService.getAiResponse(this.input.value).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(resp => {
-      const aiMessage: IMessage = {
-        id: 1,
-        author: 'AI',
-        content: resp.response,
-        time: new Date()
-      };
+      const aiMessage: IMessage = new Message(this.coreMessageService.getNumberOfMessages() + 1, 'AI', resp.response);
       this.coreMessageService.add(aiMessage);
+      this.coreMessageService.setInProgress(false);
     });
     this.input.reset();
     this.isDisabled$.next(true);

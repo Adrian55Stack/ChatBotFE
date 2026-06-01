@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { IMessage } from '../models/message.model';
-import { delay, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { CoreMessageService } from '../services/core-message.service';
 
@@ -19,6 +19,7 @@ export class ChatContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.messages = this.coreMessageService.getMessages();
+    this.botIsTyping = this.coreMessageService.getInProgress();
   }
 
 
