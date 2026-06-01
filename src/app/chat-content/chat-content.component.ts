@@ -21,6 +21,4 @@ export class ChatContentComponent implements OnInit {
     this.messages = this.coreMessageService.getMessages();
     this.botIsTyping = this.coreMessageService.getInProgress();
   }
-
-
 }
