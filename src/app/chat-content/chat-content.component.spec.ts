@@ -20,4 +20,11 @@ describe('ChatContentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call service methods on init', () => {
+    component.ngOnInit();
+
+    expect(component.botIsTyping).toBeDefined();
+    expect(component.messages).toBeDefined();
+  });
 });

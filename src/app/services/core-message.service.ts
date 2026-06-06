@@ -1,26 +1,32 @@
 import { Injectable } from '@angular/core';
-import { distinctUntilChanged, filter, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { IMessage } from '../models/message.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoreMessageService {
-  private readonly message$ = new Subject<string>();
+  private readonly messages$ = new BehaviorSubject<IMessage[]>([]);
+  private readonly inProgress = new BehaviorSubject<boolean>(false);
 
-  constructor() { }
-
-  setMessage(text: string) {
-    this.message$.next(text);
+  getInProgress() {
+    return this.inProgress.asObservable();
   }
 
-  getMessage() {
-    return this.message$.asObservable().pipe(
-      filter((msg: any) => !!msg.trim()),
-      distinctUntilChanged());
+  setInProgress(value: boolean) {
+    this.inProgress.next(value);
   }
 
-  endConversation(): void {
-    this.message$.complete();
+  getNumberOfMessages(): number {
+    return this.messages$.getValue()?.length;
   }
 
+  getMessages(): BehaviorSubject<IMessage[]> {
+    return this.messages$;
+  }
+
+  add(message: IMessage): void {
+    const current = this.messages$.getValue();
+    this.messages$.next([...current, message]);
+  }
 }
