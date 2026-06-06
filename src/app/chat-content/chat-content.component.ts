@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { CoreMessageService } from '../services/core-message.service';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 
 @Component({
   selector: 'app-chat-content',
@@ -24,6 +25,7 @@ export class ChatContentComponent implements OnInit {
   }
 
   parseMarkdown(msg: string): string {
-      return marked(msg) as string;
+      const html = marked(msg) as string;
+      return DOMPurify.sanitize(html);
   }
 }
