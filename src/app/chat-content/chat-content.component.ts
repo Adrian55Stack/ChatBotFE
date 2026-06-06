@@ -4,6 +4,7 @@ import { IMessage } from '../models/message.model';
 import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { CoreMessageService } from '../services/core-message.service';
+import { marked } from 'marked';
 
 @Component({
   selector: 'app-chat-content',
@@ -20,5 +21,9 @@ export class ChatContentComponent implements OnInit {
   ngOnInit(): void {
     this.messages = this.coreMessageService.getMessages();
     this.botIsTyping = this.coreMessageService.getInProgress();
+  }
+
+  parseMarkdown(msg: string): string {
+      return marked(msg) as string;
   }
 }

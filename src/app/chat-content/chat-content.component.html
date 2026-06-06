@@ -4,7 +4,7 @@
         <div class="d-flex">
             <p [id]="message?.id">({{message.time | date: 'mediumTime'}})</p>
             <strong class="pe-2">{{message.author}}:</strong>
-            <p>{{message.content}}</p>
+            <p [innerHTML]="parseMarkdown(message.content)"></p>
         </div>
         } @empty {
         <div> No Messages</div>
