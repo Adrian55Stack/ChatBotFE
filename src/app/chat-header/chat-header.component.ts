@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './chat-header.component.scss'
 })
 export class ChatHeaderComponent {
+  appTitle = 'SeshatAI';
+  subtitle = 'Ancient stories. Modern answers.';
 }

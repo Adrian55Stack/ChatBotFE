@@ -19,13 +19,15 @@ export class ChatContentComponent implements OnInit {
   messages: Observable<IMessage[]>;
   botIsTyping: Observable<boolean>;
 
+  emptyListMessage = 'Ask wisely. I remember everything.'
+
   ngOnInit(): void {
     this.messages = this.coreMessageService.getMessages();
     this.botIsTyping = this.coreMessageService.getInProgress();
   }
 
   parseMarkdown(msg: string): string {
-      const html = marked(msg) as string;
+      const html = (marked(msg) as string).replace('<p','<p class="mb-0"');
       return DOMPurify.sanitize(html);
   }
 }
