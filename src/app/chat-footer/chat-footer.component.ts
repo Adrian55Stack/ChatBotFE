@@ -45,7 +45,7 @@ export class ChatFooterComponent implements OnInit {
     this.coreMessageService.add(userMessage);
 
     this.conversationService.getAiResponse(this.input.value).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(resp => {
-      const aiMessage: IMessage = new Message(this.coreMessageService.getNumberOfMessages() + 1, 'AI', resp.response);
+      const aiMessage: IMessage = new Message(this.coreMessageService.getNumberOfMessages() + 1, 'AI', resp.answer);
       this.coreMessageService.add(aiMessage);
       this.coreMessageService.setInProgress(false);
     });
