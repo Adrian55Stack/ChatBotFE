@@ -26,6 +26,8 @@ export class ChatFooterComponent implements OnInit {
 
   isDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
+  placeholder = 'Seek wisdom...';
+
   ngOnInit(): void {
     this.listenToValueChanges();
   }

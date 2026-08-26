@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center w-100 px-3 pb-3">
     <mat-form-field appearance="outline" class="w-50 pt-2">
-        <input matInput placeholder="Type a message" [formControl]="input" (keyup.enter)="sendMessage()">
+        <input matInput [placeholder]="placeholder" [formControl]="input" (keyup.enter)="sendMessage()">
         <button matSuffix mat-icon-button (click)="sendMessage()" [disabled]="isDisabled$ | async">
             <mat-icon>send</mat-icon>
         </button>
