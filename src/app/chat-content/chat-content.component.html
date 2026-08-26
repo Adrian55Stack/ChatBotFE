@@ -1,7 +1,7 @@
 <mat-accordion>
     <mat-expansion-panel disabled expanded class="mx-3 chat-content-panel">
         @for(message of (messages | async); track message?.id) {
-        <div class="d-flex align-items-center" [class.justify-content-end]="message?.author === 'User'">
+        <div class="d-flex" [class.justify-content-end]="message?.author === 'User'">
             @if(message?.author === 'AI') {
                 <img src="seshat.png" width="80" height="80" alt="seshat">
             }
@@ -16,8 +16,13 @@
             <p>{{emptyListMessage}}</p>
         </div>
         }
+        @if(botIsTyping | async) {
+         <div class="d-flex align-items-end">
+            <img src="seshat.png" width="80" height="80" alt="seshat">
+            <div class="ps-4 mb-2">
+                <div class="loader"></div>
+            </div>
+         </div>
+        }
     </mat-expansion-panel>
-    @if(botIsTyping | async) {
-        <p>Bot is typing...</p>
-    }
 </mat-accordion>
