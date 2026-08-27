@@ -11,10 +11,7 @@
             </div>
         </div>
         } @empty {
-        <div class="d-flex flex-column align-items-center justify-content-center h-100">
-            <app-avatar [size]="200"></app-avatar>
-            <p>{{emptyListMessage}}</p>
-        </div>
+            <app-empty-list></app-empty-list>
         }
         @if(botIsTyping | async) {
             <app-typing-in-progress></app-typing-in-progress>

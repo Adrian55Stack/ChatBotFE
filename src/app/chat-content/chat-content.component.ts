@@ -8,10 +8,11 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { TypingInProgressComponent } from "../typing-in-progress/typing-in-progress.component";
 import { AvatarComponent } from '../avatar/avatar.component';
+import { EmptyListComponent } from "../empty-list/empty-list.component";
 
 @Component({
   selector: 'app-chat-content',
-  imports: [MatExpansionModule, AsyncPipe, DatePipe, TypingInProgressComponent, AvatarComponent],
+  imports: [MatExpansionModule, AsyncPipe, DatePipe, TypingInProgressComponent, AvatarComponent, EmptyListComponent],
   templateUrl: './chat-content.component.html',
   styleUrl: './chat-content.component.scss'
 })
@@ -20,8 +21,6 @@ export class ChatContentComponent implements OnInit {
 
   messages: Observable<IMessage[]>;
   botIsTyping: Observable<boolean>;
-
-  emptyListMessage = 'Ask wisely. I remember everything.'
 
   ngOnInit(): void {
     this.messages = this.coreMessageService.getMessages();
