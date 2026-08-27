@@ -1,0 +1,10 @@
+<div class="d-flex" [class.justify-content-end]="message()?.author === 'User'">
+    @if(message()?.author === 'AI') {
+        <app-avatar [size]="80"></app-avatar>
+    }
+    <div>
+        <p [id]="message()?.id" class="time">{{message().time | date: 'shortTime'}}</p>
+        <p class="message" [class]="[message()?.author === 'User' ? 'user': 'bot']"
+            [innerHTML]="parseMarkdown(message().content)"></p>
+    </div>
+</div>

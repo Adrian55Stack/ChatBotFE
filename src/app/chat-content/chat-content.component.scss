@@ -1,4 +1,12 @@
+::ng-deep .mat-expansion-panel-content-wrapper {
+    height: 100%;
+    .mat-expansion-panel-body {
+        height: 100%;
+    }
+}
 .chat-content-panel {
-    height: 75vh;
-    overflow-y: scroll;
+    height: 70vh;
+    overflow-y: auto;
+    background-color: white;
+
 }

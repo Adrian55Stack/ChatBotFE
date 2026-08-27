@@ -1,0 +1,17 @@
+p {
+    margin-bottom: 0;
+    &.time {
+        font-size: 14px;
+        color: grey;
+    }
+    &.message {
+        border-radius: 10px;
+        padding: 5px;
+        &.user {
+            background-color: #ebf3fc;
+        }
+        &.bot {
+            background-color: #f5f5f5;
+        }
+    }
+}

@@ -14,7 +14,7 @@ export class ConversationService {
 
   constructor() { }
 
-  getAiResponse(message: string): Observable<AiModelResponse>{
-    return this.http.post<AiModelResponse>(`${this.chatUrl}/chat`, {message});
+  getAiResponse(question: string): Observable<AiModelResponse>{
+    return this.http.post<AiModelResponse>(`${this.chatUrl}/chat`, {question});
   }
 }

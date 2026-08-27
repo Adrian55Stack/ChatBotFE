@@ -2,7 +2,8 @@ import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CoreMessageService } from '../services/core-message.service';
 import { BehaviorSubject, debounceTime } from 'rxjs';
@@ -13,7 +14,7 @@ import { IMessage, Message } from '../models/message.model';
 
 @Component({
   selector: 'app-chat-footer',
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule, AsyncPipe],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule, AsyncPipe, MatTooltipModule],
   templateUrl: './chat-footer.component.html',
   styleUrl: './chat-footer.component.scss'
 })
@@ -26,13 +27,17 @@ export class ChatFooterComponent implements OnInit {
 
   isDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
+  placeholder = 'Seek wisdom...';
+
+  sendTooltip = 'Enquire';
+
   ngOnInit(): void {
     this.listenToValueChanges();
   }
 
   listenToValueChanges() {
     this.input.valueChanges.pipe(
-      debounceTime(1000)
+      debounceTime(500)
     ).subscribe(val => {
       this.isDisabled$.next(!val);
     });
@@ -45,7 +50,7 @@ export class ChatFooterComponent implements OnInit {
     this.coreMessageService.add(userMessage);
 
     this.conversationService.getAiResponse(this.input.value).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(resp => {
-      const aiMessage: IMessage = new Message(this.coreMessageService.getNumberOfMessages() + 1, 'AI', resp.response);
+      const aiMessage: IMessage = new Message(this.coreMessageService.getNumberOfMessages() + 1, 'AI', resp.answer);
       this.coreMessageService.add(aiMessage);
       this.coreMessageService.setInProgress(false);
     });

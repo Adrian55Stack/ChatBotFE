@@ -1,3 +1,3 @@
 export interface AiModelResponse {
-    response: string;
+    answer: string;
 }
