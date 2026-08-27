@@ -6,10 +6,11 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 import { CoreMessageService } from '../services/core-message.service';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
+import { TypingInProgressComponent } from "../typing-in-progress/typing-in-progress.component";
 
 @Component({
   selector: 'app-chat-content',
-  imports: [MatExpansionModule, AsyncPipe, DatePipe],
+  imports: [MatExpansionModule, AsyncPipe, DatePipe, TypingInProgressComponent],
   templateUrl: './chat-content.component.html',
   styleUrl: './chat-content.component.scss'
 })

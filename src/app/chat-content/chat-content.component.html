@@ -17,12 +17,7 @@
         </div>
         }
         @if(botIsTyping | async) {
-         <div class="d-flex align-items-end">
-            <img src="seshat.png" width="80" height="80" alt="seshat">
-            <div class="ps-4 mb-2">
-                <div class="loader"></div>
-            </div>
-         </div>
+            <app-typing-in-progress></app-typing-in-progress>
         }
     </mat-expansion-panel>
 </mat-accordion>
