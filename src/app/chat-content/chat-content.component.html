@@ -1,15 +1,7 @@
 <mat-accordion>
     <mat-expansion-panel disabled expanded class="mx-3 chat-content-panel">
         @for(message of (messages | async); track message?.id) {
-        <div class="d-flex" [class.justify-content-end]="message?.author === 'User'">
-            @if(message?.author === 'AI') {
-                <app-avatar [size]="80"></app-avatar>
-            }
-            <div>
-                <p [id]="message?.id" class="time">{{message.time | date: 'shortTime'}}</p>
-                <p class="message" [class]="[message?.author === 'User' ? 'user': 'bot']" [innerHTML]="parseMarkdown(message.content)"></p>
-            </div>
-        </div>
+            <app-message [message]="message"></app-message>
         } @empty {
             <app-empty-list></app-empty-list>
         }
