@@ -7,10 +7,11 @@ import { CoreMessageService } from '../services/core-message.service';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { TypingInProgressComponent } from "../typing-in-progress/typing-in-progress.component";
+import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'app-chat-content',
-  imports: [MatExpansionModule, AsyncPipe, DatePipe, TypingInProgressComponent],
+  imports: [MatExpansionModule, AsyncPipe, DatePipe, TypingInProgressComponent, AvatarComponent],
   templateUrl: './chat-content.component.html',
   styleUrl: './chat-content.component.scss'
 })
