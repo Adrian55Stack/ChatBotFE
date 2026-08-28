@@ -15,7 +15,7 @@ export class MessageComponent {
   message = input.required<IMessage>();
 
   parseMarkdown(msg: string): string {
-    const html = (marked(msg) as string).replace('<p','<p class="mb-0"');
+    const html = (marked(msg || '') as string).replace('<p','<p class="mb-0"');
     return DOMPurify.sanitize(html);
   }
 }
