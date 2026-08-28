@@ -83,9 +83,8 @@
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
-          "builder": "@angular-builders/jest:run",
+          "builder": "@angular-devkit/build-angular:jest",
           "options": {
-            "configPath": "./jest.config.ts",
             "tsConfig": "tsconfig.spec.json"
           }
         }

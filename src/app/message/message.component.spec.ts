@@ -14,6 +14,10 @@ describe('MessageComponent', () => {
 
     fixture = TestBed.createComponent(MessageComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('message', {
+      id: '1',
+      text: 'Hello world'
+    });
     fixture.detectChanges();
   });
 
