@@ -15,8 +15,7 @@ import { IMessage, Message } from '../models/message.model';
 @Component({
   selector: 'app-chat-footer',
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule, AsyncPipe, MatTooltipModule],
-  templateUrl: './chat-footer.component.html',
-  styleUrl: './chat-footer.component.scss'
+  templateUrl: './chat-footer.component.html'
 })
 export class ChatFooterComponent implements OnInit {
   private readonly destroyRef = inject(DestroyRef);

@@ -4,8 +4,7 @@ import { AvatarComponent } from '../avatar/avatar.component';
 @Component({
   selector: 'app-empty-list',
   imports: [AvatarComponent],
-  templateUrl: './empty-list.component.html',
-  styleUrl: './empty-list.component.scss'
+  templateUrl: './empty-list.component.html'
 })
 export class EmptyListComponent {
   emptyListMessage = 'Ask wisely. I remember everything.'
