@@ -3,16 +3,10 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
     transform: {
-        '^.+\\.ts$': 'ts-jest', // Only transform .ts files
+        '^.+\\.ts$': 'ts-jest'
     },
     transformIgnorePatterns: [
-        '/node_modules/(?!flat)/', // Exclude modules except 'flat' from transformation
+        '/node_modules/(?!flat)/',
     ],
-    collectCoverage: true,
-  
-    // Specifies 'lcov' and 'text' (for console visibility) as outputs
-    coverageReporters: ["json", "lcov", "text", "clover"],
-  
-    // Directs Jest to output reports directly into your ./coverage folder
-    coverageDirectory: "./coverage"
+    coverageReporters: ["json", "lcov", "text", "clover"]
 };
