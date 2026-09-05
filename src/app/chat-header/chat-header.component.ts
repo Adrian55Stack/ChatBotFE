@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-header',
@@ -7,11 +7,4 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   styleUrl: './chat-header.component.scss',
   imports: [TranslatePipe]
 })
-export class ChatHeaderComponent {
-  private readonly translate: TranslateService = inject(TranslateService);
-  appTitle = 'SeshatAI';
-  subtitle = 'Ancient stories. Modern answers.';
-  constructor() {
-    this.translate.use('zh');
-  }
-}
+export class ChatHeaderComponent { }

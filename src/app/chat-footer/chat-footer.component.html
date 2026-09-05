@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-center w-100 px-3 pb-3">
     <mat-form-field appearance="outline" class="w-50 pt-2">
         @let isDisabled = (isDisabled$ | async);
-        <label class="d-none" for="input-id">{{placeholder}}</label>
-        <input matInput id="input-id" [placeholder]="placeholder" [formControl]="input" (keyup.enter)="isDisabled ? null : sendMessage()">
-        <button matSuffix mat-icon-button (click)="sendMessage()" [disabled]="isDisabled" [matTooltip]="sendTooltip">
+        <label class="d-none" for="input-id">{{'sidInputFooterPlaceholder' | translate}}</label>
+        <input matInput id="input-id" [placeholder]="'sidInputFooterPlaceholder' | translate" [formControl]="input" (keyup.enter)="isDisabled ? null : sendMessage()">
+        <button matSuffix mat-icon-button (click)="sendMessage()" [disabled]="isDisabled" [matTooltip]="'sidSendFooterButton' | translate">
             <mat-icon>send</mat-icon>
         </button>
     </mat-form-field>

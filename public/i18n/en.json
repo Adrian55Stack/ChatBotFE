@@ -1,4 +1,7 @@
 {
-  "HELLO": "Hello World!",
-  "WELCOME": "Welcome to our application!"
+  "sidTitle": "SeshatAI",
+  "sidSubtitle": "Ancient stories. Modern answers.",
+  "sidEmptyList": "Ask wisely. I remember everything.",
+  "sidInputFooterPlaceholder": "Seek wisdom...",
+  "sidSendFooterButton": "Enquire"
 }

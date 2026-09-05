@@ -11,10 +11,11 @@ import { AsyncPipe } from '@angular/common';
 import { ConversationService } from '../services/conversation.service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import { IMessage, Message } from '../models/message.model';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-footer',
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule, AsyncPipe, MatTooltipModule],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule, AsyncPipe, MatTooltipModule, TranslatePipe],
   templateUrl: './chat-footer.component.html'
 })
 export class ChatFooterComponent implements OnInit {
@@ -25,10 +26,6 @@ export class ChatFooterComponent implements OnInit {
   input: FormControl = new FormControl();
 
   isDisabled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-
-  placeholder = 'Seek wisdom...';
-
-  sendTooltip = 'Enquire';
 
   ngOnInit(): void {
     this.listenToValueChanges();
