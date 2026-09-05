@@ -1,4 +1,7 @@
 {
- "HELLO": "你好，世界！",
- "WELCOME": "歡迎使用我們的應用程式！"
+  "sidTitle": "SeshatAI",
+  "sidSubtitle": "古老的故事，现代的答案。",
+  "sidEmptyList": "智慧提问，我将铭记一切。",
+  "sidInputFooterPlaceholder": "探寻智慧...",
+  "sidSendFooterButton": "询问"
 }
