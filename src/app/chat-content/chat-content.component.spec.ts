@@ -2,13 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatContentComponent } from './chat-content.component';
 import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
+import { FakeTranslateLoader } from '../avatar/mocks/fake-translate-loader';
 
-class FakeTranslateLoader implements TranslateLoader {
-  getTranslation() {
-    return of({});
-  }
-}
 
 describe('ChatContentComponent', () => {
   let component: ChatContentComponent;

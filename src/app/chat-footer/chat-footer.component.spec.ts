@@ -4,12 +4,8 @@ import { CoreMessageService } from '../services/core-message.service'; // update
 import { ConversationService } from '../services/conversation.service'; // update path
 import { ChatFooterComponent } from './chat-footer.component';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
+import { FakeTranslateLoader } from '../avatar/mocks/fake-translate-loader';
 
-class FakeTranslateLoader implements TranslateLoader {
-  getTranslation() {
-    return of({});
-  }
-}
 describe('ChatFooterComponent', () => {
   let component: ChatFooterComponent;
   let fixture: ComponentFixture<ChatFooterComponent>;
