@@ -1,3 +1,14 @@
-<app-chat-header></app-chat-header>
-<app-chat-content></app-chat-content>
-<app-chat-footer></app-chat-footer>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over">
+    ABC
+  </mat-drawer>
+
+  <div>
+    <button type="button" (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+    <app-chat-header></app-chat-header>
+    <app-chat-content></app-chat-content>
+    <app-chat-footer></app-chat-footer>
+</mat-drawer-container>
