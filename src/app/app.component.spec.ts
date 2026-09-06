@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService, TranslateCompiler, TranslateLoader, TranslateParser, TranslateService } from '@ngx-translate/core';
-import { FakeTranslateLoader } from './avatar/mocks/fake-translate-loader';
+import { FakeTranslateLoader } from './mocks/fake-translate-loader';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

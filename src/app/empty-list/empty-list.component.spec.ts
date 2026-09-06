@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmptyListComponent } from './empty-list.component';
 import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
-import { FakeTranslateLoader } from '../avatar/mocks/fake-translate-loader';
+import { FakeTranslateLoader } from '../mocks/fake-translate-loader';
 
 describe('EmptyListComponent', () => {
   let component: EmptyListComponent;
