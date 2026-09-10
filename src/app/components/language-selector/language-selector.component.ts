@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { FlagIconComponent } from "../flag-icon/flag-icon.component";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-language-selector',
@@ -11,6 +12,7 @@ import { FlagIconComponent } from "../flag-icon/flag-icon.component";
   styleUrl: './language-selector.component.scss'
 })
 export class LanguageSelectorComponent {
+  private readonly translateService = inject(TranslateService);
 
   languages = [
     { id: 1, src: 'flags/en.jpg', label: 'English', value: 'en' },
@@ -26,5 +28,9 @@ export class LanguageSelectorComponent {
   ];
 
   selectedLanguage = this.languages[0];
+
+  updateLanguage($event: MatSelectChange): void {
+    this.translateService.use($event.value.value);
+  }
 
 }

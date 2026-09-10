@@ -1,5 +1,5 @@
 <mat-form-field>
-  <mat-select [(ngModel)]="selectedLanguage">
+  <mat-select [(ngModel)]="selectedLanguage" (selectionChange)="updateLanguage($event)">
     <mat-select-trigger>
         <app-flag-icon [src]="selectedLanguage.src" [alt]="selectedLanguage.label"></app-flag-icon>
     {{selectedLanguage.label}}
