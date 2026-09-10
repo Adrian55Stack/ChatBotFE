@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { FlagIconComponent } from "../flag-icon/flag-icon.component";
 
 @Component({
   selector: 'app-language-selector',
-  imports: [MatFormFieldModule, MatSelectModule, FormsModule],
+  imports: [MatFormFieldModule, MatSelectModule, FormsModule, FlagIconComponent],
   templateUrl: './language-selector.component.html',
   styleUrl: './language-selector.component.scss'
 })

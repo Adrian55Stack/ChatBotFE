@@ -1,12 +1,12 @@
 <mat-form-field>
   <mat-select [(ngModel)]="selectedLanguage">
     <mat-select-trigger>
-      <img [src]="selectedLanguage.src" width=30 height="20" [alt]="selectedLanguage.label"/>
+        <app-flag-icon [src]="selectedLanguage.src" [alt]="selectedLanguage.label"></app-flag-icon>
     {{selectedLanguage.label}}
    </mat-select-trigger>
     @for (language of languages; track language.id) {
         <mat-option [value]="language">
-            <img [src]="language.src" width=30 height="20" [alt]="language.label"/>
+            <app-flag-icon [src]="language.src" [alt]="language.label"></app-flag-icon>
             {{language.label}}
         </mat-option>
     }
