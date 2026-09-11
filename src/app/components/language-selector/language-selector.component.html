@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field appearance="outline">
   <mat-select [(ngModel)]="selectedLanguage" (selectionChange)="updateLanguage($event)">
     <mat-select-trigger>
         <app-flag-icon [src]="selectedLanguage.src" [alt]="selectedLanguage.label | translate"></app-flag-icon>
