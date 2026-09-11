@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { FlagIconComponent } from "../flag-icon/flag-icon.component";
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Language } from '../../models/language.model';
 
 @Component({
   selector: 'app-language-selector',
@@ -17,7 +18,7 @@ export class LanguageSelectorComponent implements OnInit {
   flagsPath = 'flags/';
   flagsFormat = '.jpg';
 
-  languages = [
+  languages: Language[] = [
     { id: 1, src: `${this.flagsPath}en${this.flagsFormat}`, label: 'sidEnglish', value: 'en' },
     { id: 2, src: `${this.flagsPath}fr${this.flagsFormat}`, label: 'sidFrench', value: 'fr' },
     { id: 3, src: `${this.flagsPath}zh${this.flagsFormat}`, label: 'sidChinese', value: 'zh' },
@@ -30,7 +31,7 @@ export class LanguageSelectorComponent implements OnInit {
     { id: 10, src: `${this.flagsPath}ro${this.flagsFormat}`, label: 'sidRomanian', value: 'ro' }
   ];
 
-  selectedLanguage;
+  selectedLanguage: Language;
 
   ngOnInit(): void {
    this.selectedLanguage = this.languages.find(l => l.value === 'en'); 
