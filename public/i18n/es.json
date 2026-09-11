@@ -3,5 +3,15 @@
   "sidSubtitle": "Historias antiguas. Respuestas modernas.",
   "sidEmptyList": "Pregunta con sabiduría. Lo recuerdo todo.",
   "sidInputFooterPlaceholder": "Busca sabiduría...",
-  "sidSendFooterButton": "Consultar"
+  "sidSendFooterButton": "Consultar",
+   "sidEnglish": "Inglés",
+  "sidFrench": "Francés",
+  "sidChinese": "Chino",
+  "sidSpanish": "Español",
+  "sidArabic": "Árabe",
+  "sidRussian": "Ruso",
+  "sidJapanese": "Japonés",
+  "sidItalian": "Italiano",
+  "sidPolish": "Polaco",
+  "sidRomanian": "Rumano"
 }

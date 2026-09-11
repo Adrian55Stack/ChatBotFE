@@ -3,5 +3,15 @@
   "sidSubtitle": "古の物語。現代の答え。",
   "sidEmptyList": "賢く尋ねてください。すべてを記憶しています。",
   "sidInputFooterPlaceholder": "知恵を求めて...",
-  "sidSendFooterButton": "尋ねる"
+  "sidSendFooterButton": "尋ねる",
+  "sidEnglish": "英語",
+  "sidFrench": "フランス語",
+  "sidChinese": "中国語",
+  "sidSpanish": "スペイン語",
+  "sidArabic": "アラビア語",
+  "sidRussian": "ロシア語",
+  "sidJapanese": "日本語",
+  "sidItalian": "イタリア語",
+  "sidPolish": "ポーランド語",
+  "sidRomanian": "ルーマニア語"
 }

@@ -3,5 +3,15 @@
   "sidSubtitle": "قصص قديمة. أجوبة حديثة.",
   "sidEmptyList": "اسأل بحكمة. أنا أتذكر كل شيء.",
   "sidInputFooterPlaceholder": "ابحث عن الحكمة...",
-  "sidSendFooterButton": "استفسر"
+  "sidSendFooterButton": "استفسر",
+   "sidEnglish": "الإنجليزية",
+  "sidFrench": "الفرنسية",
+  "sidChinese": "الصينية",
+  "sidSpanish": "الإسبانية",
+  "sidArabic": "العربية",
+  "sidRussian": "الروسية",
+  "sidJapanese": "اليابانية",
+  "sidItalian": "الإيطالية",
+  "sidPolish": "البولندية",
+  "sidRomanian": "الرومانية"
 }

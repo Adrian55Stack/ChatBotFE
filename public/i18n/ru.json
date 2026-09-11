@@ -3,5 +3,15 @@
   "sidSubtitle": "Древние истории. Современные ответы.",
   "sidEmptyList": "Спрашивай мудро. Я помню всё.",
   "sidInputFooterPlaceholder": "Ищите мудрость...",
-  "sidSendFooterButton": "Спросить"
+  "sidSendFooterButton": "Спросить",
+   "sidEnglish": "Английский",
+  "sidFrench": "Французский",
+  "sidChinese": "Китайский",
+  "sidSpanish": "Испанский",
+  "sidArabic": "Арабский",
+  "sidRussian": "Русский",
+  "sidJapanese": "Японский",
+  "sidItalian": "Итальянский",
+  "sidPolish": "Польский",
+  "sidRomanian": "Румынский"
 }

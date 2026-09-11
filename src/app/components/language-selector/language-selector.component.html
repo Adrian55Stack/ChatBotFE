@@ -1,13 +1,13 @@
 <mat-form-field>
   <mat-select [(ngModel)]="selectedLanguage" (selectionChange)="updateLanguage($event)">
     <mat-select-trigger>
-        <app-flag-icon [src]="selectedLanguage.src" [alt]="selectedLanguage.label"></app-flag-icon>
-    {{selectedLanguage.label}}
+        <app-flag-icon [src]="selectedLanguage.src" [alt]="selectedLanguage.label | translate"></app-flag-icon>
+    {{selectedLanguage.label | translate}}
    </mat-select-trigger>
     @for (language of languages; track language.id) {
         <mat-option [value]="language">
-            <app-flag-icon [src]="language.src" [alt]="language.label"></app-flag-icon>
-            {{language.label}}
+            <app-flag-icon [src]="language.src" [alt]="language.label | translate"></app-flag-icon>
+            {{language.label | translate}}
         </mat-option>
     }
   </mat-select>
