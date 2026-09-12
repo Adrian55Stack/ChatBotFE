@@ -1,5 +1,5 @@
 <mat-button-toggle-group (change)="selectTheme($event)">
   @for (theme of themes; track theme.value) {
-    <mat-button-toggle [value]="theme.value">{{theme.label}}</mat-button-toggle>
+    <mat-button-toggle [value]="theme.value">{{theme.label | translate}}</mat-button-toggle>
   }
 </mat-button-toggle-group>
