@@ -1,7 +1,7 @@
 <mat-drawer-container>
     <mat-drawer #drawer mode="over">
         <div class="d-flex justify-content-end">
-            <span class="pe-2 pt-2" (click)="drawer.toggle()">
+            <span class="pe-2 pt-2" (click)="drawer.toggle()" (keydown)="drawer.toggle()">
                 <mat-icon>arrow_back_ios</mat-icon>
             </span>
         </div>
