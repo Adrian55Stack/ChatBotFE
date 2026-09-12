@@ -2,16 +2,18 @@ p {
     margin-bottom: 0;
     &.time {
         font-size: 14px;
-        color: grey;
+        color: var(--mat-sys-on-surface-variant);
     }
     &.message {
         border-radius: 10px;
         padding: 5px;
         &.user {
-            background-color: #ebf3fc;
+            background-color: var(--mat-sys-secondary-container);
+            color: var(--mat-sys-on-secondary-container);
         }
         &.bot {
-            background-color: #f5f5f5;
+            background-color: var(--mat-sys-tertiary-container);
+            color: var(--mat-sys-on-tertiary-container);
         }
     }
 }
