@@ -1,5 +1,5 @@
 <mat-button-toggle-group (change)="selectTheme($event)">
-  <mat-button-toggle value="egypt">Egyptian</mat-button-toggle>
-  <mat-button-toggle value="norse">Norse</mat-button-toggle>
-  <mat-button-toggle value="greek">Greek</mat-button-toggle>
+  @for (theme of themes; track theme.value) {
+    <mat-button-toggle [value]="theme.value">{{theme.label}}</mat-button-toggle>
+  }
 </mat-button-toggle-group>

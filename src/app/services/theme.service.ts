@@ -1,7 +1,7 @@
 // theme.service.ts
 import { Injectable, signal, effect } from '@angular/core';
+import { Mythology } from '../constants/mythology.constant';
 
-export type Mythology = 'egypt' | 'norse' | 'greek';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
@@ -22,6 +22,6 @@ export class ThemeService {
 
   private getInitialTheme(): Mythology {
     const saved = localStorage.getItem(this.storageKey) as Mythology | null;
-    return saved ?? 'egypt';
+    return saved ?? Mythology.Egypt;
   }
 }
