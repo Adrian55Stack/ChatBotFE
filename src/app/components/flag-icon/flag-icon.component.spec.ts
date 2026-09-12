@@ -14,6 +14,8 @@ describe('FlagIconComponent', () => {
 
     fixture = TestBed.createComponent(FlagIconComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('src', 'source');
+    fixture.componentRef.setInput('alt', 'alternativeText');
     fixture.detectChanges();
   });
 

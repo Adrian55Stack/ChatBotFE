@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguageSelectorComponent } from './language-selector.component';
+import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
+import { FakeTranslateLoader } from '../../mocks/fake-translate-loader';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('LanguageSelectorComponent', () => {
   let component: LanguageSelectorComponent;
@@ -8,7 +11,11 @@ describe('LanguageSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LanguageSelectorComponent]
+      imports: [LanguageSelectorComponent],
+      providers: [provideTranslateService({
+        loader: { provide: TranslateLoader, useClass: FakeTranslateLoader },
+      }),
+    provideHttpClient()]
     })
     .compileComponents();
 
