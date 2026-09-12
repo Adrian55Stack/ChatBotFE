@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmptyListComponent } from './empty-list.component';
+import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
+import { FakeTranslateLoader } from '../mocks/fake-translate-loader';
 
 describe('EmptyListComponent', () => {
   let component: EmptyListComponent;
@@ -8,7 +10,10 @@ describe('EmptyListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmptyListComponent]
+      imports: [EmptyListComponent],
+      providers: [provideTranslateService({
+        loader: { provide: TranslateLoader, useClass: FakeTranslateLoader },
+      })]
     })
     .compileComponents();
 

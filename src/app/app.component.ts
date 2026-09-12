@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { ChatHeaderComponent } from './chat-header/chat-header.component';
-import { ChatFooterComponent } from './chat-footer/chat-footer.component';
-import { ChatContentComponent } from './chat-content/chat-content.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ConversationComponent } from "./conversation/conversation.component";
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LanguageSelectorComponent } from "./components/language-selector/language-selector.component";
+
 @Component({
   selector: 'app-root',
-  imports: [ChatHeaderComponent, ChatContentComponent, ChatFooterComponent, MatCardModule],
+  imports: [ConversationComponent, MatCardModule, MatSidenavModule, ConversationComponent, MatIconModule, MatButtonModule, LanguageSelectorComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

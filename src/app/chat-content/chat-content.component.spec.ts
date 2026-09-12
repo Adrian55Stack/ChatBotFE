@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatContentComponent } from './chat-content.component';
+import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
+import { FakeTranslateLoader } from '../mocks/fake-translate-loader';
+
 
 describe('ChatContentComponent', () => {
   let component: ChatContentComponent;
@@ -8,7 +11,10 @@ describe('ChatContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChatContentComponent]
+      imports: [ChatContentComponent],
+      providers: [provideTranslateService({
+        loader: { provide: TranslateLoader, useClass: FakeTranslateLoader },
+      })]
     })
     .compileComponents();
 

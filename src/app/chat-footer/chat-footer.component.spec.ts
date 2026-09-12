@@ -3,6 +3,8 @@ import { of } from 'rxjs';
 import { CoreMessageService } from '../services/core-message.service'; // update path
 import { ConversationService } from '../services/conversation.service'; // update path
 import { ChatFooterComponent } from './chat-footer.component';
+import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
+import { FakeTranslateLoader } from '../mocks/fake-translate-loader';
 
 describe('ChatFooterComponent', () => {
   let component: ChatFooterComponent;
@@ -32,6 +34,9 @@ describe('ChatFooterComponent', () => {
       providers: [
         { provide: CoreMessageService, useValue: coreMessageServiceSpy },
         { provide: ConversationService, useValue: conversationServiceSpy },
+        provideTranslateService({
+        loader: { provide: TranslateLoader, useClass: FakeTranslateLoader },
+      })
       ],
     }).compileComponents();
 

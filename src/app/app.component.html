@@ -1,3 +1,19 @@
-<app-chat-header></app-chat-header>
-<app-chat-content></app-chat-content>
-<app-chat-footer></app-chat-footer>
+<mat-drawer-container>
+    <mat-drawer #drawer mode="over">
+        <div class="d-flex justify-content-end">
+            <span class="pe-2 pt-2" (click)="drawer.toggle()" (keydown)="drawer.toggle()">
+                <mat-icon>arrow_back_ios</mat-icon>
+            </span>
+        </div>
+        <div class="ps-2">
+            <app-language-selector></app-language-selector>
+        </div>
+        
+
+    </mat-drawer>
+
+    <button type="button" mat-mini-fab class="drawer-button ms-3 mt-2" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <app-conversation></app-conversation>
+</mat-drawer-container>
