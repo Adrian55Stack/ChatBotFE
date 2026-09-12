@@ -11,8 +11,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-language-selector',
   imports: [MatFormFieldModule, MatSelectModule, FormsModule, FlagIconComponent, TranslatePipe],
-  templateUrl: './language-selector.component.html',
-  styleUrl: './language-selector.component.scss'
+  templateUrl: './language-selector.component.html'
 })
 export class LanguageSelectorComponent implements OnInit {
   private readonly translateService = inject(TranslateService);

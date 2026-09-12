@@ -3,8 +3,7 @@ import { Component, input } from '@angular/core';
 @Component({
   selector: 'app-flag-icon',
   imports: [],
-  templateUrl: './flag-icon.component.html',
-  styleUrl: './flag-icon.component.scss'
+  templateUrl: './flag-icon.component.html'
 })
 export class FlagIconComponent {
   src = input.required<string>();
