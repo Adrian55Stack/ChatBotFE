@@ -1,4 +1,17 @@
+@use '@angular/material' as mat;
 @use './themes/egypt.scss';
 @use './themes/norse.scss';
 @use './themes/greek.scss';
 @use './scroll-bar.scss';
+
+html {
+  @include mat.theme((
+    typography: 'Literata',
+    density: 0
+  ));
+  font-family: 'Literata', Georgia, serif;
+}
+
+* {
+  font-family: inherit;
+}
