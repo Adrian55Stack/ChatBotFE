@@ -5,13 +5,11 @@
 @use './scroll-bar.scss';
 
 html {
-  @include mat.theme((
-    typography: 'Literata',
-    density: 0
-  ));
-  font-family: 'Literata', Georgia, serif;
+    font-family: 'Literata', Georgia, serif;
+    @include mat.theme((typography: 'Literata',
+            density: 0));
 }
 
 * {
-  font-family: inherit;
+    font-family: inherit;
 }
