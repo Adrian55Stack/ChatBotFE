@@ -1,5 +1,5 @@
 html[data-theme='greek'] {
-  --mat-sys-primary: #1F5C82;
+  --mat-sys-primary: #1B5A80;
   --mat-sys-on-primary: #FFFFFF;
   --mat-sys-primary-container: #CFE6F5;
   --mat-sys-on-primary-container: #0D2E42;
@@ -13,8 +13,15 @@ html[data-theme='greek'] {
   --mat-sys-on-tertiary-container: #4A2410;
   --mat-sys-surface: #F7F5F0;
   --mat-sys-on-surface: #2B2B2B;
-  --mat-sys-surface-container: #E9E5DA;
-  --mat-sys-surface-container-high: #DFDACB;
+  --mat-sys-surface-variant: #E6DFCE;
+  --mat-sys-on-surface-variant: #4A4538;
   --mat-sys-outline: #9C9284;
   --mat-sys-outline-variant: #D6D0C2;
+  --mat-sys-surface-dim: #E2DDCE;
+  --mat-sys-surface-bright: #F7F5F0;
+  --mat-sys-surface-container-lowest: #FFFFFF;
+  --mat-sys-surface-container-low: #F1EDE2;
+  --mat-sys-surface-container: #E9E5DA;
+  --mat-sys-surface-container-high: #DFDACB;
+  --mat-sys-surface-container-highest: #D8D2BF;
 }
