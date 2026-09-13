@@ -1,4 +1,5 @@
-<mat-button-toggle-group (change)="selectTheme($event)" [(ngModel)]="currentTheme">
+<mat-button-toggle-group (change)="selectTheme($event)" [(ngModel)]="currentTheme"
+  [hideSingleSelectionIndicator]="true">
   @for (theme of themes; track theme.value) {
     <mat-button-toggle [value]="theme.value" [matTooltip]="theme.label | translate" matTooltipPosition="above">
       <img [src]="theme.source" [width]="size" [height]="size" [alt]="theme.label | translate">
