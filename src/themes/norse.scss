@@ -1,23 +1,20 @@
 html[data-theme='norse'] {
-  --mat-sys-primary: #4A6FA5;
+  --mat-sys-primary: #4E6478;
   --mat-sys-on-primary: #FFFFFF;
-  --mat-sys-primary-container: #D6E4F0;
-  --mat-sys-on-primary-container: #1E3350;
-  --mat-sys-secondary: #3B5D42;
+  --mat-sys-primary-container: #D9E2E8;
+  --mat-sys-on-primary-container: #24313C;
+  --mat-sys-secondary: #4A7D91;
   --mat-sys-on-secondary: #FFFFFF;
-  --mat-sys-secondary-container: #C8DCC7;
-  --mat-sys-on-secondary-container: #1E3322;
-  --mat-sys-tertiary: #8B3A3A;
+  --mat-sys-secondary-container: #D2E7EC;
+  --mat-sys-on-secondary-container: #15333C;
+  --mat-sys-tertiary: #9C6B36;
   --mat-sys-on-tertiary: #FFFFFF;
-  --mat-sys-tertiary-container: #EAD0D0;
-  --mat-sys-on-tertiary-container: #4A1717;
-  --mat-sys-surface: #F0F3F5;
-  --mat-sys-on-surface: #1E2A33;
-  --mat-sys-surface-container: #DDE4E8;
-  --mat-sys-surface-container-high: #D0D9DE;
-  --mat-sys-outline: #7A8A96;
-  --mat-sys-outline-variant: #C0CBD1;
-  color-scheme: light;
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+  --mat-sys-tertiary-container: #EEDFC9;
+  --mat-sys-on-tertiary-container: #4A3210;
+  --mat-sys-surface: #EDF1F3;
+  --mat-sys-on-surface: #1C262D;
+  --mat-sys-surface-container: #DEE6EA;
+  --mat-sys-surface-container-high: #CFDAE0;
+  --mat-sys-outline: #74858F;
+  --mat-sys-outline-variant: #BFCAD0;
 }
