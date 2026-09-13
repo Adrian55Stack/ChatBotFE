@@ -1,4 +1,7 @@
+import { Mythology } from "../constants/mythology.constant";
+
 export interface Theme {
-    value: string,
-    label: string
+    value: Mythology,
+    label: string,
+    source: string
 }
