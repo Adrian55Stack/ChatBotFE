@@ -10,8 +10,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-theme-selector',
   imports: [MatButtonToggleModule, TranslatePipe, MatTooltipModule, FormsModule],
-  templateUrl: './theme-selector.component.html',
-  styleUrl: './theme-selector.component.scss'
+  templateUrl: './theme-selector.component.html'
 })
 export class ThemeSelectorComponent {
   private readonly themeService = inject(ThemeService);

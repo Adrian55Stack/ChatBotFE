@@ -1,4 +1,3 @@
-// theme.service.ts
 import { Injectable, signal, effect } from '@angular/core';
 import { Mythology } from '../constants/mythology.constant';
 
@@ -11,7 +10,7 @@ export class ThemeService {
   constructor() {
     effect(() => {
       const value = this.theme();
-      document.documentElement.setAttribute('data-theme', value);
+      document.documentElement.dataset['theme'] = value;
       localStorage.setItem(this.storageKey, value);
     });
   }
