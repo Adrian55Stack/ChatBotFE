@@ -1,4 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './themes/egypt.scss';
+@use './themes/norse.scss';
+@use './themes/greek.scss';
+@use './scroll-bar.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+    font-family: 'Literata', Georgia, serif;
+    @include mat.theme((typography: 'Literata',
+            density: 0));
+}
+
+* {
+    font-family: inherit;
+}

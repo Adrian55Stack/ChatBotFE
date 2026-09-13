@@ -3,7 +3,7 @@
         @let isDisabled = (isDisabled$ | async);
         <label class="d-none" for="input-id">{{'sidInputFooterPlaceholder' | translate}}</label>
         <input matInput id="input-id" [placeholder]="'sidInputFooterPlaceholder' | translate" [formControl]="input" (keyup.enter)="isDisabled ? null : sendMessage()">
-        <button matSuffix mat-icon-button (click)="sendMessage()" [disabled]="isDisabled" [matTooltip]="'sidSendFooterButton' | translate">
+        <button matSuffix mat-icon-button class="send-button" (click)="sendMessage()" [disabled]="isDisabled" [matTooltip]="'sidSendFooterButton' | translate">
             <mat-icon>send</mat-icon>
         </button>
     </mat-form-field>

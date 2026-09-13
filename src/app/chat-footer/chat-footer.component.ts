@@ -16,7 +16,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-chat-footer',
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ReactiveFormsModule, AsyncPipe, MatTooltipModule, TranslatePipe],
-  templateUrl: './chat-footer.component.html'
+  templateUrl: './chat-footer.component.html',
+  styleUrl: './chat-footer.component.scss'
 })
 export class ChatFooterComponent implements OnInit {
   private readonly destroyRef = inject(DestroyRef);
